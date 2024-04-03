@@ -7,5 +7,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'static_pages#index'
-  resources :static_pages, only: [:index]
+  resources :static_pages, only: [:index] do
+    collection do
+      get :export
+    end
+  end
 end
